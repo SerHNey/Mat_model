@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32112.339
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mat_model", "Mat_model\Mat_model.csproj", "{74A30D81-0668-41E2-8EFE-4348EB7762CB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{74A30D81-0668-41E2-8EFE-4348EB7762CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74A30D81-0668-41E2-8EFE-4348EB7762CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74A30D81-0668-41E2-8EFE-4348EB7762CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74A30D81-0668-41E2-8EFE-4348EB7762CB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F51994A9-A36B-4087-9675-C1EB16CFCF03}
+	EndGlobalSection
+EndGlobal
