@@ -88,7 +88,7 @@
                 <Grid.RowDefinitions>
                 </Grid.RowDefinitions>
             </Grid>
-            <TextBlock x:Name="ATVET" Background="Black" Foreground="White"  Grid.ColumnSpan="4" Grid.Row="5" Margin="30,15,30,0" FontSize="18" Text="sddddddddddddddddddd" FontFamily="Montserrat" TextAlignment="Center" TextDecorations="{x:Null}"/>
+            <Button x:Name="ATVET" Background="Black" Foreground="White"  Grid.ColumnSpan="4" Grid.Row="5" Margin="30,15,30,0" FontSize="18" Content="Press" FontFamily="Montserrat" Click="ATVET_Click"/>
         </Grid>
     </Grid>
 </Window>
