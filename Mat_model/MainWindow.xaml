@@ -53,7 +53,7 @@
         </Style>
     </Window.Resources>
     <Grid>
-        <Grid Background="Black" >
+        <Grid Background="White" >
             <Grid.RowDefinitions>
                 <RowDefinition Height="0.5*"/>
                 <RowDefinition Height="1*"/>
@@ -69,10 +69,10 @@
                 <ColumnDefinition Width="3*"/>
                 <ColumnDefinition Width="3*"/>
             </Grid.ColumnDefinitions>
-            <Border BorderBrush="White" BorderThickness="0,0,0,2" Grid.Column="0" Grid.ColumnSpan="4">
-                <TextBlock Foreground="White" Margin="5,15,0,0" Grid.Row="0" Text="Нахождение обратной матрицы к исходной путем последовательных исключений (Гаусса)." TextWrapping="Wrap" FontSize="12" FontFamily="Montserrat Medium" TextAlignment="Center" LineHeight="6"/>
+            <Border BorderBrush="Black" BorderThickness="0,0,0,2" Grid.Column="0" Grid.ColumnSpan="5">
+                <TextBlock Foreground="Black" Margin="5,15,0,0" Grid.Row="0" Text="Нахождение обратной матрицы к исходной путем последовательных исключений (Гаусса)." TextWrapping="Wrap" FontSize="12" FontFamily="Montserrat Medium" TextAlignment="Center" LineHeight="6"/>
             </Border>
-            <TextBlock Foreground="White" Grid.Row="2" Grid.Column="0" Text="Введите размер матрицы"  TextAlignment="Center" FontFamily="Montserrat Medium" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <TextBlock Foreground="Black" Grid.Row="2" Grid.Column="0" Text="Введите размер матрицы"  TextAlignment="Center" FontFamily="Montserrat Medium" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             <!--тут пишется количество столбцов-->
             <TextBox x:Name="size_c" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="2" BorderThickness="0,0,0,2" Background="Black" Foreground="White" Margin="10,30"  TextAlignment="Center" FontFamily="Montserrat Medium" TextChanged="size_c_TextChanged" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Style="{DynamicResource TextBoxStyle1}" FontSize="16" />
             <!--тут пишется количество строк-->
@@ -88,7 +88,7 @@
                 <Grid.RowDefinitions>
                 </Grid.RowDefinitions>
             </Grid>
-            <Button x:Name="ATVET" Background="Black" Foreground="White"  Grid.ColumnSpan="4" Grid.Row="5" Margin="30,15,30,0" FontSize="18" Content="Press" FontFamily="Montserrat" Click="ATVET_Click"/>
+            <Button x:Name="ATVET" Background="Black" Foreground="White"  Grid.ColumnSpan="5" Grid.Row="5" Margin="30,15,30,0" FontSize="18" Content="Press" FontFamily="Montserrat" Click="ATVET_Click"/>
         </Grid>
     </Grid>
 </Window>
