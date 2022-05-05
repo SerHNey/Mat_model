@@ -15,9 +15,6 @@ using System.Windows.Shapes;
 
 namespace Mat_model
 {
-    /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()
@@ -47,8 +44,6 @@ namespace Mat_model
                     {
                         if (i == j) { boxx.Text ="1"; }
                         else { boxx.Text = "0"; }
-                        //[i, j] = A[i, j];    //создаем копию матрицы См
-                        //Console.WriteLine("ACopy[i, j] =" + ACopy[i, j]);
                     }
                 }
             }
@@ -86,19 +81,6 @@ namespace Mat_model
                     Console.WriteLine("ACopy[i, j] =" + ACopy[i, j]);
                 }
             }
-            // Замена главной
-            /* for (int i = 0; i < count_col; i++)
-             {
-                 for (int c = 0; c < count_col; c++)
-                 {
-                     if (FindName($"ArrayBox{i}_{c}") is TextBox box)
-                     {
-                         if (i == c) { box.Text = "1"; }
-                         else { box.Text = "0"; }
-                         ACopy[i, c] = A[i, c];
-                     }
-                 }
-             }*/
             //прямой ход
             for (int k = 0; k < count_col; ++k)
             {
@@ -145,7 +127,7 @@ namespace Mat_model
                     }
                     if (FindName($"ArrayObrBox{i}_{c}") is TextBox boxx)
                     {
-                        boxx.Text = Convert.ToString(Math.Round(AObrat[i, c],3));
+                        boxx.Text = Convert.ToString(Math.Round(AObrat[i, c],2));
                     }
                 }
             }
@@ -254,7 +236,6 @@ namespace Mat_model
                         this.UnregisterName(text_box.Name);
                         this.RegisterName(text_box.Name, text_box);
                     }
- //                   text_box.TextChanged += ArrayBox_TextChanged;
                     text_box.Style = (Style)size_c.FindResource("TextBoxStyle1");
                     text_box.Foreground = new SolidColorBrush(Colors.White);
                     text_box.Background = new SolidColorBrush(Colors.Black);
@@ -269,27 +250,6 @@ namespace Mat_model
                 }
             }
         }
-        /*private void ArrayBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            //из-за того что кол-во ячеек в матрице не статично, при изменении текста в любой из них пробегаем по всем ячейкам
-            int count_col = Array.ColumnDefinitions.Count;
-            int none_content_box = 0;//кол-во пустых ячеек
-            for (int i = 0; i < count_col; i++)
-            {
-                for (int c = 0; c < count_col; c++)
-                {
-                    if (FindName($"ArrayBox{i}_{c}") is TextBox box)
-                    {
-                        if (!Check_input(box.Text))
-                        {
-                            box.Text = "";
-                            none_content_box++;
-                        } 
-                        
-                    }
-                }
-            }
-        }*/
         private void ATVET_Click(object sender, RoutedEventArgs e)
         {
             ObtatPostr();
