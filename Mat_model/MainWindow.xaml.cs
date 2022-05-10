@@ -51,10 +51,10 @@ namespace Mat_model
         private void ObtatPostr()
         {
             int count_col = Array.ColumnDefinitions.Count;
-            double[,] A = new double[count_col, count_col];
-            double[,] AObrat = new double[count_col, count_col];
-            double[,] ACopy = new double[count_col, count_col];
-            for (int i = 0; i < count_col; i++)
+            double[,] A = new double[count_col, count_col]; // основная матрица
+            double[,] AObrat = new double[count_col, count_col]; // Обратная матрица
+            double[,] ACopy = new double[count_col, count_col]; // Копия основной матрицы
+            for (int i = 0; i < count_col; i++) // Запись данных в массив 
             {
                 for (int c = 0; c < count_col; c++)
                 {
