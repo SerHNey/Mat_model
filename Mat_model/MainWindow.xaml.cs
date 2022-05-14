@@ -254,5 +254,21 @@ namespace Mat_model
         {
             ObtatPostr();
         }
+
+        private void clear_Click(object sender, RoutedEventArgs e)
+        {
+            int count_col = Array.ColumnDefinitions.Count;
+            for (int i = 0; i < count_col; i++)
+            {
+                for (int j = 0; j < count_col; j++)
+                {
+                    if (FindName($"ArrayBox{i}_{j}") is TextBox boxx)
+                    {
+                        boxx.Text = "";
+                    }
+                }
+            }
+
+        }
     }
 }

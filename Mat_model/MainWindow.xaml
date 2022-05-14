@@ -77,7 +77,7 @@
             <TextBlock Foreground="White" Grid.Row="2" Grid.Column="0" Text="Введите размер матрицы"  TextAlignment="Center" FontFamily="Montserrat Medium" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             
             <!--тут пишется количество столбцов-->
-            <TextBox x:Name="size_c" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="2" BorderThickness="0,0,0,2" Background="Black" Foreground="White" Margin="10,30"  TextAlignment="Center" FontFamily="Montserrat Medium" TextChanged="size_c_TextChanged" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Style="{DynamicResource TextBoxStyle1}" FontSize="16" />
+            <TextBox x:Name="size_c" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="2" BorderThickness="2,0,2,2" Background="Black" Foreground="White" Margin="10,30"  TextAlignment="Center" FontFamily="Montserrat Medium" TextChanged="size_c_TextChanged" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Style="{DynamicResource TextBoxStyle1}" FontSize="16" />
             <!--тут пишется количество строк-->
             <Grid x:Name="Array" Margin="15" Grid.Column="3" Grid.Row="1" Grid.RowSpan="4">
                 <Grid.ColumnDefinitions>
@@ -90,7 +90,9 @@
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                 </Grid.RowDefinitions>
+            
             </Grid>
+            <Button x:Name="clear" Background="Black" Foreground="White" Content="Очистить" Grid.Row="3" Grid.ColumnSpan="2" Margin="30,15,30,0" Click="clear_Click"></Button>
             <Button x:Name="ATVET" Background="Black" Foreground="White"  Grid.ColumnSpan="5" Grid.Row="5" Margin="30,15,30,0" FontSize="18" Content="Press" FontFamily="Montserrat" Click="ATVET_Click"/>
         </Grid>
     </Grid>
