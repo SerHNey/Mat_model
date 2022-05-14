@@ -32,10 +32,10 @@
                                 <Setter Property="Opacity" TargetName="border" Value="0.56"/>
                             </Trigger>
                             <Trigger Property="IsMouseOver" Value="true">
-                                <Setter Property="BorderBrush" TargetName="border" Value="white"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="Black"/>
                             </Trigger>
                             <Trigger Property="IsKeyboardFocused" Value="true">
-                                <Setter Property="BorderBrush" TargetName="border" Value="white"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="Black"/>
                             </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
@@ -53,7 +53,7 @@
         </Style>
     </Window.Resources>
     <Grid>
-        <Grid Background="Black" >
+        <Grid Background="White" >
             <Grid.RowDefinitions>
                 <RowDefinition Height="0.5*"/>
                 <RowDefinition Height="1*"/>
@@ -69,15 +69,15 @@
                 <ColumnDefinition Width="3*"/>
                 <ColumnDefinition Width="3*"/>
             </Grid.ColumnDefinitions>
-            <Border BorderBrush="White" BorderThickness="0,0,0,2" Grid.Column="0" Grid.ColumnSpan="5">
-                <TextBlock Foreground="White" Margin="5,15,0,0" Grid.Row="0" Text="Нахождение обратной матрицы к исходной путем последовательных исключений (Гаусса)." TextWrapping="Wrap" FontSize="12" FontFamily="Montserrat Medium" TextAlignment="Center" LineHeight="6"/>
+            <Border BorderBrush="Black" Grid.Column="0" Grid.ColumnSpan="5">
+                <TextBlock Foreground="Black" Margin="5,15,0,0" Grid.Row="0" Text="Нахождение обратной матрицы к исходной путем последовательных исключений (Гаусса)." TextWrapping="Wrap" FontSize="12" FontFamily="Montserrat Medium" TextAlignment="Center" LineHeight="6"/>
             </Border>
             <TextBlock Text="Составляется таблица из двух частей: в левой части записывается исходная матрица; в правой части единичная, путем преобразований 
-                аналогичных преобразованиям задачи №1. В левой части получают единичную матрицу, а в правой автоматически получается обратная к данной" Grid.Row="1" Grid.ColumnSpan="3" TextWrapping="Wrap" Foreground="White" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" TextAlignment="Justify"></TextBlock>
-            <TextBlock Foreground="White" Grid.Row="2" Grid.Column="0" Text="Введите размер матрицы"  TextAlignment="Center" FontFamily="Montserrat Medium" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                аналогичных преобразованиям задачи №1. В левой части получают единичную матрицу, а в правой автоматически получается обратная к данной" Grid.Row="1" Grid.ColumnSpan="3" TextWrapping="Wrap" Foreground="Black" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" TextAlignment="Justify"></TextBlock>
+            <TextBlock Foreground="Black" Grid.Row="2" Grid.Column="0" Text="Введите размер матрицы"  TextAlignment="Center" FontFamily="Montserrat Medium" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             
             <!--тут пишется количество столбцов-->
-            <TextBox x:Name="size_c" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="2" BorderThickness="2,0,2,2" Background="Black" Foreground="White" Margin="10,30"  TextAlignment="Center" FontFamily="Montserrat Medium" TextChanged="size_c_TextChanged" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Style="{DynamicResource TextBoxStyle1}" FontSize="16" />
+            <TextBox x:Name="size_c" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="2" BorderThickness="2,0,2,0" Background="White" Foreground="Black" Margin="10,30"  TextAlignment="Center" FontFamily="Montserrat Medium" TextChanged="size_c_TextChanged" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Style="{DynamicResource TextBoxStyle1}" FontSize="16" />
             <!--тут пишется количество строк-->
             <Grid x:Name="Array" Margin="15" Grid.Column="3" Grid.Row="1" Grid.RowSpan="4">
                 <Grid.ColumnDefinitions>
@@ -92,8 +92,8 @@
                 </Grid.RowDefinitions>
             
             </Grid>
-            <Button x:Name="clear" Background="Black" Foreground="White" Content="Очистить" Grid.Row="3" Grid.ColumnSpan="2" Margin="30,15,30,0" Click="clear_Click"></Button>
-            <Button x:Name="ATVET" Background="Black" Foreground="White"  Grid.ColumnSpan="5" Grid.Row="5" Margin="30,15,30,0" FontSize="18" Content="Press" FontFamily="Montserrat" Click="ATVET_Click"/>
+            <Button x:Name="clear" Background="White" Foreground="Black" Content="Очистить" Grid.Row="3" Grid.ColumnSpan="2" Margin="30,15,30,0" Click="clear_Click" FontFamily="Montserrat"></Button>
+            <Button x:Name="start" Background="White" Foreground="Black" Content="Запуск" Grid.Row="4" Grid.ColumnSpan="2" Margin="30,15,30,0" Click="start_Click" FontFamily="Montserrat"></Button>
         </Grid>
     </Grid>
 </Window>

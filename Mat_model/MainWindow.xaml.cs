@@ -51,6 +51,21 @@ namespace Mat_model
         private void ObtatPostr()
         {
             int count_col = Array.ColumnDefinitions.Count;
+            int f = 0;
+            for (int i = 0; i < count_col; i++)
+            {
+                for (int j = 0; j < count_col; j++)
+                {
+                    if (FindName($"ArrayObrBox{i}_{j}") is TextBox boxx)
+                    {
+                        if (boxx.Text == "") { MessageBox.Show("Введены не все переменные"); f++; }
+                        else { }
+                    }
+                }
+            }
+            if (f == 0)
+            {
+            //int count_col = Array.ColumnDefinitions.Count;
             double[,] A = new double[count_col, count_col]; // основная матрица
             double[,] AObrat = new double[count_col, count_col]; // Обратная матрица
             double[,] ACopy = new double[count_col, count_col]; // Копия основной матрицы
@@ -60,12 +75,28 @@ namespace Mat_model
                 {
                     if (FindName($"ArrayBox{i}_{c}") is TextBox box)
                     {
-                        A[i, c] = Convert.ToDouble(box.Text);
+                        try
+                        {
+                            A[i, c] = Convert.ToDouble(box.Text);
+                        }
+                        catch (Exception ex)
+                        {
+
+                        }
+
 
                     }
                     if (FindName($"ArrayObrBox{i}_{c}") is TextBox boxx)
                     {
-                        AObrat[i, c] = Convert.ToDouble(boxx.Text);
+                        try
+                        {
+                            AObrat[i, c] = Convert.ToDouble(boxx.Text);
+                        }
+                        catch (Exception ex)
+                        {
+
+                        }
+
 
                     }
                 }
@@ -131,6 +162,8 @@ namespace Mat_model
                     }
                 }
             }
+            }
+
         }
         private void size_c_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -183,11 +216,11 @@ namespace Mat_model
                     }
  //                   text_box.TextChanged += ArrayBox_TextChanged;
                     text_box.Style = (Style)size_c.FindResource("TextBoxStyle1");
-                    text_box.Foreground = new SolidColorBrush(Colors.White);
-                    text_box.Background = new SolidColorBrush(Colors.Black);
+                    text_box.Foreground = new SolidColorBrush(Colors.Black);
+                    text_box.Background = new SolidColorBrush(Colors.White);
                     text_box.HorizontalContentAlignment = HorizontalAlignment.Center;
                     text_box.VerticalContentAlignment = VerticalAlignment.Center;
-                    text_box.BorderBrush = Brushes.White;
+                    text_box.BorderBrush = Brushes.Black;
                     text_box.BorderThickness = new Thickness(1, 1, 1, 1);
                     text_box.FontSize = 22;
                     //матрица делается "на 1 больше" чем пишет пользователь, в этих "лишних" ячейках будут писаться значения из векторов и в них самому писать нельзя
@@ -237,11 +270,11 @@ namespace Mat_model
                         this.RegisterName(text_box.Name, text_box);
                     }
                     text_box.Style = (Style)size_c.FindResource("TextBoxStyle1");
-                    text_box.Foreground = new SolidColorBrush(Colors.White);
-                    text_box.Background = new SolidColorBrush(Colors.Black);
+                    text_box.Foreground = new SolidColorBrush(Colors.Black);
+                    text_box.Background = new SolidColorBrush(Colors.White);
                     text_box.HorizontalContentAlignment = HorizontalAlignment.Center;
                     text_box.VerticalContentAlignment = VerticalAlignment.Center;
-                    text_box.BorderBrush = Brushes.White;
+                    text_box.BorderBrush = Brushes.Black;
                     text_box.BorderThickness = new Thickness(1, 1, 1, 1);
                     text_box.FontSize = 22;
                     Array.Children.Add(text_box);
@@ -250,9 +283,39 @@ namespace Mat_model
                 }
             }
         }
-        private void ATVET_Click(object sender, RoutedEventArgs e)
+        private void start_Click(object sender, RoutedEventArgs e)
         {
-            ObtatPostr();
+            int count_col = Array.ColumnDefinitions.Count;
+            int none_content_box = 0;//кол-во пустых ячеек
+            for (int i = 0; i < count_col; i++)
+            {
+                for (int c = 0; c < count_col; c++)
+                {
+                    if (FindName($"ArrayBox{i}_{c}") is TextBox box)
+                    {
+                        if (!Check_input(box.Text))
+                        {
+                            box.Background = new SolidColorBrush(Colors.Red);
+                            box.Text = "";
+                            none_content_box++;
+                        }
+                    }
+                }
+            }
+            if (none_content_box == 0) 
+            {
+                for (int i = 0; i < count_col; i++)
+                {
+                    for (int c = 0; c < count_col; c++)
+                    {
+                        if (FindName($"ArrayBox{i}_{c}") is TextBox box)
+                        {
+                           box.Background = new SolidColorBrush(Colors.White);
+                        }
+                    }
+                }
+                ObtatPostr();
+            }
         }
 
         private void clear_Click(object sender, RoutedEventArgs e)
@@ -268,6 +331,7 @@ namespace Mat_model
                     }
                 }
             }
+            Edinicmat();
 
         }
     }
